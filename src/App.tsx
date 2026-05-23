@@ -4,8 +4,8 @@ import { Dashboard } from './pages/Dashboard'
 import { Intakes } from './pages/Intakes'
 import { Customers } from './pages/Customers'
 import { DashboardLayout } from './components/layout/DashboardLayout'
-import { useBlinkAuth } from '@blinkdotnew/react'
-import { LoadingOverlay } from '@blinkdotnew/ui'
+
+
 
 // Root route
 const rootRoute = createRootRoute({
@@ -24,11 +24,7 @@ const dashboardLayoutRoute = createRoute({
   getParentRoute: () => rootRoute,
   id: 'dashboard-layout',
   component: () => {
-    const { user, isLoading } = useBlinkAuth()
-    
-    if (isLoading) {
-      return <LoadingOverlay />
-    }
+   
     
     // In a real app, we might redirect to login here if !user
     // For this demo, we'll allow viewing if the user is in the process of building
